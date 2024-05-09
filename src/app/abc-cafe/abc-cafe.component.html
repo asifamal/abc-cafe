@@ -1,0 +1,30 @@
+<h2>ABC Cafe Counter</h2>
+
+<div>
+  <label for="customerName">Enter your name:</label>
+  <input type="text" id="customerName" [(ngModel)]="customerName">
+
+  <button (click)="startOrderInquiry()">Ask Order</button>
+</div>
+
+<div *ngIf="orderInquiryActive">
+  <p>What would {{ customerName }} like to have?</p>
+
+  <label for="beverage">Select beverage:</label>
+  <select id="beverage" [(ngModel)]="selectedBeverage">
+    <option value="">--Select Beverage--</option>
+    <option value="Coffee">Coffee</option>
+    <option value="Tea">Tea</option>
+    <option value="Juice">Juice</option>
+    <option value="Soda">Soda</option>
+  </select>
+
+  <button (click)="placeOrder()">Place Order</button>
+</div>
+
+<div *ngIf="orderSummaryVisible">
+  <h3>Order Summary</h3>
+  <ul>
+    <li *ngFor="let order of customerOrders; let i = index">{{ i + 1 }}. {{ order.customerName }} ordered {{ order.beverage }}</li>
+  </ul>
+</div>

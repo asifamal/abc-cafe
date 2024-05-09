@@ -1,0 +1,23 @@
+<div class="text-center">
+  <div class="abc"><h2>ABC Cafe Counter</h2></div>
+  <p style="color:#ED9455">{{myDate | date: 'short'}}</p>
+  <label for="customerName">Enter your name:</label>
+  <input type="text" id="customerName" [(ngModel)]="customerName">
+  <button (click)="startOrderInquiry()" class="btn btn-primary">Ask Order</button>
+
+
+<app-order-inquiry [customerName]="customerName"  [orderInquiryActive]="orderInquiryActive"></app-order-inquiry> 
+<app-beverage-selection [orderInquiryActive]="orderInquiryActive"   (ordersUpdated)="fromBevarge($event)"></app-beverage-selection>
+
+<ng-container *ngIf="customerOrders"> <!-- Add ng-container with ngIf to handle customerOrders -->
+    <app-order-placement [orderInquiryActive]="orderInquiryActive" 
+                         [customerOrders]="customerOrders"
+                         (ordersUpdated)="updateOrders($event)" 
+                         [customerName]="customerName"
+                         [selectedBeverage]="selectedBeverage"
+                        >
+    </app-order-placement>
+  
+    <app-order-summary [customerOrders]="customerOrders"></app-order-summary>
+  </ng-container>
+</div>

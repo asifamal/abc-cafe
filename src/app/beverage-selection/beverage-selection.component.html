@@ -1,0 +1,6 @@
+<div *ngIf="orderInquiryActive">
+    <label for="beverage">Select beverage:</label>
+    <select id="beverage" (change)=" sendBevarge()" [(ngModel)]="selectedBeverage">
+      <option *ngFor="let beverage of beverages" [value]="beverage">{{ beverage }}</option>
+    </select>
+  </div>
