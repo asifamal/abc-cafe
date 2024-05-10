@@ -10,6 +10,8 @@ import { OrderInquiryComponent } from './order-inquiry/order-inquiry.component';
 import { BeverageSelectionComponent } from './beverage-selection/beverage-selection.component';
 import { OrderPlacementComponent } from './order-placement/order-placement.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { CustomerreviewcomponentComponent } from './customerreviewcomponent/customerreviewcomponent.component';
+import { PerformanceComponentComponent } from './performance-component/performance-component.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     OrderInquiryComponent,
     BeverageSelectionComponent,
     OrderPlacementComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    CustomerreviewcomponentComponent,
+    PerformanceComponentComponent
   ],
   imports: [
     BrowserModule,

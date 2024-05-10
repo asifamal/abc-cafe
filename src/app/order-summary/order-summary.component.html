@@ -9,6 +9,7 @@
         <th scope="col">#</th>
         <th scope="col">Customer Name</th>
         <th scope="col">Beverage</th>
+        <th scope="col">Ordered Date</th>
         <th scope="col">Ordered Time</th>
       </tr>
     </thead>
@@ -17,8 +18,12 @@
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ order.customerName }}</td>
         <td>{{ order.beverage | uppercase }}</td>
-        <td>{{myDate | date: 'medium'}}</td>
+        <td>{{myDate | date: 'shortDate'}}</td>
+        <td>{{myDate | date: 'shortTime'}}</td>
+        <td><button class="btn btn-success" (click)="customerReview()">Consumed</button></td>
       </tr>
     </tbody>
   </table>
-  
+  <button (click)="showPerformance()">Show Performance</button>
+  <app-customerreviewcomponent [showReview]="showReview" ></app-customerreviewcomponent>
+  <app-performance-component *ngIf="showPerformance"></app-performance-component>

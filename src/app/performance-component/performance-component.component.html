@@ -1,0 +1,9 @@
+<div>
+    <p>Overall performance: {{ performanceMessage }}</p>
+    <button (click)="showReviewStats()">Show Review Stats</button>
+    <div *ngIf="showStats">
+      <p>Good Reviews: {{ reviewStats.good }}</p>
+      <p>Average Reviews: {{ reviewStats.average }}</p>
+      <p>Poor Reviews: {{ reviewStats.poor }}</p>
+    </div>
+  </div>
